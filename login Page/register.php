@@ -1,0 +1,180 @@
+<html>
+    <head>
+        <title>Registration Page</title>
+        <link rel="stylesheet" type="text/css" href="style_login.css" />
+    </head>
+    <body class="body">
+        <?php include "conn.php"?>
+<?php
+$fname = mysqli_real_escape_string($conn,$_POST['fname']);
+$lname = mysqli_real_escape_string($conn,$_POST['lname']);
+$email = mysqli_real_escape_string($conn,$_POST['email']);
+$accno =  mysqli_real_escape_string($conn,$_POST['accno']);
+$uname =  mysqli_real_escape_string($conn,$_POST['uname']);
+$pwd  =  mysqli_real_escape_string($conn,$_POST['pwd']);
+$cpwd =  mysqli_real_escape_string($conn,$_POST['cpwd']);
+
+if(!empty(fname)){
+$query = "insert into register ( fName,lName,accountNum,emailId,userName,password,cpassword,cemailID) values ('$fname','$lname','$accno','$email','$uname','$pwd','$cpwd','$email')";
+
+if(mysqli_query($conn,$query)) {
+echo "<script type='text/javascript'>alert('Subscriber Web Account has been created successfully.');</script>";
+echo "<script>window.location = 'index_login.html'</script>";
+}
+else {
+echo "Error: " . mysqli_error($conn);
+}
+}
+
+
+mysqli_close($conn);
+
+
+?>
+        <header class="mainHeader" >
+            <img src="img/logo.png"><img class="title" src="img/Sportzmagazine.png">
+                <nav id="navmenu"><ul>
+                    <li><a href="../Main Page/Main.html">Home</a></li>
+                    <li><a href="#">Subscribe&nbsp;&nbsp;&#9660;</a>
+                        <ul class="sub1">
+                            <li><a href="../login Page/InividualSubscriber.php">Individual</a></li>
+                            <li><a href="../login Page/CorporateSubscriber.php">Corporate</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Contribute</a></li>
+                    <li class="active" style="float:right; margin-right"><a href="../login Page/index_login.html">Login</a></li>
+                </ul></nav>
+                </header>
+		<div class="wrapper">
+			<div class="content">
+				<div id="form_wrapper" class="form_wrapper">
+                    <div class="register_width">
+					<form class="register active" method = "POST" action = "register.php" onsubmit = "return checkForm(this);">
+						<h3>Create Online Account</h3>
+						<div class="column">
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#FFCC00"><b>Enter your Information:</b></font></p>
+                            <div>
+								<label>First Name:</label>
+								<input type="text" name = "fname" required/>
+								<span class="error">This is an error</span>
+							</div>
+							<div>
+                                <label>Account Number</label>
+								<input type="text" name = "accno" required/>
+								<span class="error">This is an error</span>
+							</div>
+							<div>
+								<label>User Name:</label>
+								<input type="text" name = "uname" required/>
+								<span class="error">This is an error</span>
+							</div>
+                            <div>
+                                <label>Password:</label>
+                                <input type="password" name = "pwd"  required;"/>
+                                <span class="error">This is an error</span>
+                            </div>
+                        </div>
+                        <div class="column1">
+							<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                            <div>
+								<label>Last Name:</label>
+								<input type="text" name = "lname" required/>
+								<span class="error">This is an error</span>
+							</div>
+							<div>
+                                <label>Email Id:</label>
+								<input type="text"  name = "email" required/>
+								<span class="error">This is an error</span>
+							</div>
+							<div>
+                                <div>
+                                    <label></label>
+                                    <span class="error">This is an error</span>
+                                </div>
+								<br><br><br>
+							</div>
+
+                            <div>
+                                <label>Confirm Password:</label>
+                                <input type="password" name = "cpwd" required/>
+                                <span class="error">This is an error</span>
+                            </div>
+						</div>
+						<div class="bottom">
+							<div class="remember">
+								<input type="checkbox" />
+								<span>Send me updates</span>
+							</div>
+							<input type="submit" value="Register" />
+							<a href="index_login.html" rel="login" class="linkform">You have an account already? Log in here</a>
+							<div class="clear"></div>
+						</div>
+					</form>
+                    </div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+<script type="text/javascript">
+
+  function checkForm(form)
+  {
+     re = /^[0-9]+$/;
+	if(!re.test(form.accno.value)) {
+        alert("Please enter a valid account number !");
+        form.accno.focus();
+        return false;
+      }
+ re = /^([A-Z]|[a-z])+$/;
+	  if(!re.test(form.fname.value)) {
+        alert("Please enter a valid first name!");
+        form.fname.focus();
+        return false;
+      }
+ re = /^([A-Z]|[a-z])+$/;
+          if(!re.test(form.lname.value)) {
+        alert("Please enter a valid last name!");
+        form.lname.focus();
+        return false;
+      }
+
+    if(form.pwd.value != "" && form.pwd.value == form.cpwd.value) {
+      if(form.pwd.value.length < 6) {
+        alert("Password must contain at least six characters!");
+        form.pwd.focus();
+        return false;
+      }
+      if(form.pwd.value == form.uname.value) {
+        alert("Password must be different from Username!");
+        form.pwd.focus();
+        return false;
+      }
+      re = /[0-9]/;
+      if(!re.test(form.pwd.value)) {
+        alert("Password must contain at east one number!");
+        form.pwd.focus();
+        return false;
+      }
+      re = /[a-z]/;
+      if(!re.test(form.pwd.value)) {
+        alert("Password must contain at least one lowercase letter (a-z)!");
+        form.pwd.focus();
+        return false;
+      }
+      re = /[A-Z]/;
+      if(!re.test(form.pwd.value)) {
+        alert("Password must contain at least one uppercase letter (A-Z)!");
+        form.pwd.focus();
+        return false;
+      }
+    } else {
+      alert("Password did not match!");
+      form.pwd.focus();
+      return false;
+    }
+    return true;
+  }
+
+</script>
+    </body>
+</html>

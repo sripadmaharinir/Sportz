@@ -1,0 +1,73 @@
+<head>
+    <title>Sportz Magazine</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style_login.css" type="text/css"/>
+</head>
+<body class="body">
+    <header class="mainHeader" >
+        <img src="img/logo.png"><img class="title" src="img/Sportzmagazine.png">
+            <nav id="navmenu"><ul>
+                <li><a href="../Main Page/Main.html">Home</a></li>
+                <li><a href="#">Subscribe&nbsp;&nbsp;&#9660;</a>
+                    <ul class="sub1">
+                        <li><a href="../login Page/InividualSubscriber.php">Individual</a></li>
+                        <li><a href="../login Page/CorporateSubscriber.php">Corporate</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Contribute</a></li>
+                <li><a href="#">Contact</a></li>
+                <li id='search'style="margin-left:150px">
+                <form action="">
+                        <input type="text" name="search_text" id="search_text" placeholder="Search"/>
+                        <input type="button" name="search_button" id="search_button"></a>
+                </form>
+                </li>
+                <li class="active" style="float:right; margin-right"><a href="#">Login</a></li>
+            </ul></nav>
+            </header>
+    
+    <aside class="bottom-sidebar">
+        <article>
+            <p><i><b><font size="3"><u>BIG BEN: DON'T COUNT ME OUT VS. BROWNS</u></font></b></i><br>
+            <img src="img/login1.jpg" alt="drew" height="188" width="250"><br>
+            <font size="2">Said Steelers QB Ben Roethlisberger during his weekly Tuesday interview on 93.7 The Fan: "I'm not even going to rule myself out this week, I'm going to take it one game at a time." </font></p>
+        </article>
+    </aside>
+    
+    <aside class="middle-sidebar">
+        <article>
+            <p><i><b><font size="3"><u>FROM THE MAG: LUCK'S 4TH-YEAR JINX</u></font></b></i><br>
+            <img src="img/login2.jpg" alt="more" height="200" width="300"><br>
+               <font size="2"> Andrew Luck reminds Matt Hasselbeck not of Peyton Manning or Tom Brady, but of Brett Favre -- because both his touchdown and interceptions make him say, "Ahhh, that was a dangerous play." Can Luck salvage his season?</font></p>
+                </article>
+    </aside>
+    <div class="wrapper">
+        <div class="content">
+            <div id="form_wrapper" class="form_wrapper">
+                <form class="login active" method="POST" action="../Subscription Clerk page/SubscriptionClerk.php">
+                    <h3>Login</h3>
+                    <div>
+                        <label>Username:</label>
+                        <input type="text" name="userName" required/>
+                        <span class="error">This is an error</span>
+                    </div>
+                    <div>
+                        <label>Password: <a href="forgot_password.html" rel="forgot_password" class="forgot linkform">Forgot password?</a></label>
+                        <input type="password" required/>
+                        <span class="error">This is an error</span>
+                    </div>
+                    
+                    <div class="bottom">
+                        <div class="remember"><input type="checkbox" /><span>Keep me logged in</span></div>
+                        <input type="submit" value="Login"></input>
+                        <a href="register.html" rel="register" class="register linkform">Subscribed but don't have a web account yet? <br>Click to <b>Register</b> here</a>
+                        <div class="clear"></div>
+                    </div>
+                </form>
+                
+            </div>
+            <div class="clear"></div>
+            </article>
+        </div>
+</body>
+</html>

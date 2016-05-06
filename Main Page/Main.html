@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<head>
+	<title>Sportz Magazine</title>
+	<link rel="stylesheet" href="style.css" type="text/css"/>
+<style>
+
+ul.b {
+    list-style-type: square;
+}
+</style>
+
+<script type="text/javascript">
+    document.getElementById('frmSearch').onsubmit = function() {
+        window.location = 'http://www.google.com/search?q=site:yoursitename.com ' + document.getElementById('txtSearch').value;
+        return false;
+    }
+</script>
+</head>
+
+<body class="body">
+	
+	<header class="mainHeader" >
+		<img src="img/logo.png"><img class="title" src="img/Sportzmagazine.png">
+		<nav id="navmenu"><ul>
+			<li class="active" style="margin-left:-30px;"><a href="../Main Page/Main.html">Home</a></li>
+            <li><a href="#">Subscribe&nbsp;&nbsp;&#9660;</a>
+                <ul class="sub1">
+                    <li><a href="../login Page/InividualSubscriber.php">Individual</a></li>
+                    <li><a href="../login Page/CorporateSubscriber.php">Corporate</a></li>
+                </ul>
+            </li>
+			<li><a href="#">Contribute</a></li>
+            <li><a href="#">Contact</a></li>
+            <li id='search'style="margin-left:150px">
+                <form action="" method="get">
+                    <input type="text" name="search_text" id="search_text" placeholder="Search"/>
+                    <input type="button" name="search_button" id="search_button"></a>
+                        </form>
+            </li>
+			<li style="float:right; margin-right:10px"><a href="../login Page/index_login.html">Login</a></li>
+		</ul></nav>
+	</header>
+		
+	<div class="mainContent">
+		<div class="content">	
+				<article class="topcontent">	
+					<header>
+						<h2><a href="#" rel="bookmark" title="Permalink to this POST TITLE">Newest Additions</a></h2>
+					</header>
+					
+					<footer>
+						<p class="post-info">	Subscribe today	</p>
+					</footer>
+					
+					<content>
+						<p>
+							<img src="img/Slide1.png" alt="drew" hspace="10">
+							<img src="img/Slide2.png" alt="football" hspace="10">
+							<img src="img/Slide3.jpg" alt="base" hspace="10" >
+                            <img src="img/Slide4.png" alt="chicago" hspace="05" >
+						</p>
+					</content>
+					
+				</article>
+
+				<article class="bottomcontent">	
+					<header>
+						<h2><a href="#" rel="bookmark" title="Permalink to this POST TITLE">Watch Latest Sports Updates</a></h2>
+					</header>
+
+					<footer>
+						<p class="post-info">Checkout the recent scores and sports news</p>
+					</footer>
+					
+					<content>
+                        <object width="370" height="325"
+                            data="https://www.youtube.com/embed/WsnOxyThYao">
+                        </object>
+                        <object width="370" height="325" hspace="20"
+                            data="https://www.youtube.com/embed/gw85aXy2HRg">
+                        </object>
+                        
+                    </content>
+				
+				</article>
+		</div>
+			
+				<aside class="top-sidebar">
+					<article>
+					<h2>Discounts</h2>
+                    <p> <ul >
+  						<li style="color:#0000EE;">Receive 10% discount on Corporate orders. </li>
+  						<li style="color:#0000EE;">Get a 6 Month extension for a 3 year subscription. </li>
+						</ul></p>
+				    </article>
+				</aside>
+				
+				<aside class="middle-sidebar">
+					<article>
+					<h2>Fantasy football running back depth chart</h2>
+					<p>"Starter" is that team's most valuable running back in terms of fantasy value."Handcuff" is the running back whose value would most increase.<br>
+                    <img src="img/sidepic.jpg" alt="side" style="margin:0px 0px 0px -15px"></p>
+				    </article>
+				</aside>				
+
+				<aside class="bottom-sidebar">
+					<article>
+					<h2>MIKE TOMLIN: PREPARING WITH LANDRY JONES</h2>
+                    <p>
+                    The Steelers coach is planning to have Jones at QB against the Browns, but will leave the door "slightly ajar" for Ben Roethlisberger.</p>
+				    </article>
+				</aside>
+                
+	</div>
+	
+	<footer class="mainFooter">
+        <center>
+		<p>Copyright All Rights Reserved </p>
+        </center>
+	</footer>
+ </body>
+</html>
